@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>dotnet-projdepend</ToolCommandName>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>dauthleikr</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -12,6 +13,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Link="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Build" Version="17.12.6" ExcludeAssets="runtime" />

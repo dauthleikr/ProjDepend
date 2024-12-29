@@ -1,7 +1,9 @@
 ﻿using Microsoft.Build.Evaluation;
 using Microsoft.Build.Locator;
 
-internal class Program
+namespace ProjDepend;
+
+internal static class Program
 {
     private static void Main(string[] args)
     {
@@ -35,6 +37,8 @@ internal class Program
         var dependencies = new Dictionary<string, List<string>>();
 
         var solutionDirectory = Path.GetDirectoryName(solutionPath);
+        if (solutionDirectory == null)
+            return dependencies;
 
         foreach (var projectFile in Directory.EnumerateFiles(solutionDirectory, "*.csproj", SearchOption.AllDirectories))
         {
